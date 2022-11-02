@@ -12,11 +12,11 @@
 <body>
     <div class="myhead">
         <h1>My todo list</h1>
-        <span>Vad vill du göra idag?</span>
+        <p>Vad vill du göra idag?</p>
         <table>
         <tr>
             <td><input type="text" id="things" placeholder="lägg till dina händelser"></td>
-            <td><button id="add"><i class="bi bi-plus"></i></button></td>
+            <td><button id="add" onclick="addElement()"><i class="bi bi-plus"></i></button></td>
         </tr>
         </table>    
         <ul id="todolist"></ul>
