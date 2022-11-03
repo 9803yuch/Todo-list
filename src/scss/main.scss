@@ -84,3 +84,16 @@ body {
     height: 15px;
     width: 7px;
   }
+
+  .close{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 0px 20px;
+    font-size: 25px;
+  }
+  
+  .close:hover{
+    background-color: red;
+    color: white;
+  }

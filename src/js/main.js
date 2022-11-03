@@ -2,7 +2,7 @@
 class Todo {
     constructor(todoList)
     {
-        this.todoList=todoList;
+        this.todoList = todoList;
     }
 }
 
@@ -22,9 +22,10 @@ for(let i = 0; i < todoLists.length; i ++){
 }
 
 // skapa stäng-knapp för varje listor
-let myList=document.getElementsByTagName("li")
+let myList = document.getElementsByTagName("li");
  
-for (let i = 0;i < myList.length; i ++){
+for (let i = 0; i < myList.length; i ++){
+  //skapa en element som innehåller en klass
     let span = document.createElement("span"); 
     let txt = document.createTextNode("\u00D7");
 
@@ -33,24 +34,31 @@ for (let i = 0;i < myList.length; i ++){
       myList[i].appendChild(span); 
     }
 
-let close=document.getElementsByClassName("close")
-    for (let i = 0; i<  close.length; i ++){
+// hämtar klassen "close" från span ovan för att börjar loppar
+let close = document.getElementsByClassName("close");
+
+// loppar genom "close" och gömma listan genom klick
+    for (let i = 0; i < close.length; i ++){
       close[i].onclick=function () {
         let div=this.parentElement;
         div.style.display="none";
       }
     }
 
-let list = document.querySelector("ul")
-    console.log(list)
+//skapa en check knapp när man kickar på listor
+let list = document.querySelector("ul");
+    console.log(list);
+
     list.addEventListener('click',function (ev) {
+    //om vi klickar på listan(LI) kommer det makeras som checked 
       if (ev.target.tagName === 'LI')
     {
+      // skapa check knappen genom att använda toggle()
       ev.target.classList.toggle('check')
     }
     },false);
 
-//skapa händelser i input
+//kunna skapa händelser i input
 function addElement(){
     let things = document.getElementById('things').value;
     let li = document.createElement('li');
@@ -64,4 +72,24 @@ function addElement(){
         list.appendChild(li);
         li.appendChild(t);
       }
-    }
+      
+   //skapa en stäng-knapp för nya händelser 
+   let span=document.createElement('span');
+   let txt=document.createTextNode('\u00D7');
+  
+   span.className='close';
+   span.appendChild(txt);
+   li.appendChild(span);
+   
+   for (let i = 0;i < close.length; i++){
+     close[i].onclick=function (){
+       let div = this.parentElement;
+       div.style.display="none";
+     }
+   }
+}
+
+ 
+
+ 
+
