@@ -26,14 +26,13 @@
    border-radius: 3px;
    border: solid 1px gainsboro;
    line-height: 20px;
-
-   #add:hover{
-    cursor: pointer;
-    background-color:darkgrey ;
-    color: rgb(81, 78, 78);
-  }
  }
 
+ #add:hover{
+  cursor: pointer;
+  background-color:darkgrey ;
+  color: rgb(81, 78, 78);
+}
  ul{
    margin: 0px;
    padding: 0px;

@@ -12,14 +12,19 @@ let todoList3 = new Todo ("plugga JS");
 
 let todoLists = [todoList1, todoList2, todoList3];
 
+
 //börja loppa genom samt skapa li-tagg
-for(let i = 0; i < todoLists.length; i ++){
+for (let i = 0; i < todoLists.length; i ++){
     let ulTag = document.getElementById("todolist");
     let liTag = document.createElement("li");
     liTag.innerHTML =  todoLists[i].todoList;
     ulTag.appendChild(liTag);
     document.body.appendChild(ulTag);        
 }
+
+let todoListsText = JSON.stringify(todoLists);
+localStorage.setItem("todoLists",todoListsText);
+
 
 // skapa stäng-knapp för varje listor
 let myList = document.getElementsByTagName("li");
@@ -72,9 +77,11 @@ function addElement(){
       //använda insertBefore för att får nya händelser hamnar överst i listan
         list.insertBefore(li, list.children[0]);       
         li.appendChild(t);   
+        document.getElementById("things").value = "";
       };
-    
-      document.getElementById("things").value = "";
+
+      let newListsText = JSON.stringify(things);
+      localStorage.setItem("things",newListsText );
 
    //skapa en stäng-knapp för nya händelser 
    let span = document.createElement('span');
